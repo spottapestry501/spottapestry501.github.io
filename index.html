@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function displayTime() {
+        var dateTime = new Date();
+        var hrs = dateTime.getHours();
+        var min = dateTime.getMinutes();
+        var sec = dateTime.getSeconds();
+        var session = document.getElementById("session");
+
+        if (hrs > 12) {
+          session.innerHTML = "PM";
+        } else {
+          session.innerHTML = "AM";
+        }
+
+        if (hrs > 12) {
+          hrs = hrs - 12;
+        }
+
+        if (hrs < 10) {
+          hrs = "0" + hrs;
+        }
+
+        if (sec < 10) {
+          sec = "0" + sec;
+        }
+
+        if (min < 10) {
+          min = "0" + min;
+        }
+
+        //hrs = (hrs < 10) ? "0" = hrs : hrs;
+        //min = (hrs < 10) ? "0" = min : min;
+        //sec = (sec < 10) ? "0" = sec : sec;
+
+        document.getElementById("hours").innerHTML = hrs;
+        document.getElementById("minutes").innerHTML = min;
+        document.getElementById("seconds").innerHTML = sec;
+      }
+      setInterval(displayTime, 10);
+    </script>
+    <style>
+      body {
+        margin: 0%;
+        padding: 0%;
+        background-color: black;
+      }
+      #container {
+        font-family: Arial, Helvetica, sans-serif;
+        color: #fff;
+        font-weight: bold;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 70px;
+      }
+    </style>
+    <div id="container">
+      <span id="hours">00</span>
+      <span>:</span>
+      <span id="minutes">00</span>
+      <span>:</span>
+      <span id="seconds">00</span>
+      <span id="session">AM</span>
+    </div>
+  </body>
+</html>
