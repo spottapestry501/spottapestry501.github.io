@@ -4,104 +4,161 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>note app</title>
+    <title>Document</title>
   </head>
-  <style>
-    html,
-    body {
-      height: 100%;
-      margin: 0;
-    }
+  <body>
+    <div id="game">
+      <div id="character"></div>
+    </div>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+      #game {
+        width: 400px;
+        height: 500px;
+        border: 1px solid black;
+        margin: auto;
+      }
+      #character {
+        width: 20px;
+        height: 20px;
+        background-color: red;
+        border-radius: 50%;
+        position: relative;
+        top: 440px;
+        left: 190px;
+        z-index: 10000000;
+      }
+      .block {
+        width: 400px;
+        height: 20px;
+        background-color: black;
+        position: relative;
+        top: 100px;
+        margin-top: -20px;
+      }
+      .hole {
+        width: 40px;
+        height: 20px;
+        background-color: white;
+        position: relative;
+        top: 100px;
+        margin-top: -20px;
+      }
+    </style>
+    <script>
+      var character = document.getElementById("character");
+      var game = document.getElementById("game");
+      var interval;
+      var both = 0;
+      var counter = 0;
+      var currentBlocks = [];
 
-    .notes {
-      display: flex;
-      height: 100%;
-    }
+      function moveLeft() {
+        var left = parseInt(
+          window.getComputedStyle(character).getPropertyValue("left")
+        );
+        if (left > 0) {
+          character.style.left = left - 2 + "px";
+        }
+      }
+      function moveRight() {
+        var left = parseInt(
+          window.getComputedStyle(character).getPropertyValue("left")
+        );
+        if (left < 380) {
+          character.style.left = left + 2 + "px";
+        }
+      }
+      document.addEventListener("keydown", (event) => {
+        if (both == 0) {
+          both++;
+          if (event.key === "ArrowLeft") {
+            interval = setInterval(moveLeft, 1);
+          }
+          if (event.key === "ArrowRight") {
+            interval = setInterval(moveRight, 1);
+          }
+        }
+      });
+      document.addEventListener("keyup", (event) => {
+        clearInterval(interval);
+        both = 0;
+      });
 
-    .notes * {
-      font-family: sans-serif;
-    }
-
-    .notes__sidebar {
-      border-right: 2px solid #dddddd;
-      flex-shrink: 0;
-      overflow-y: auto;
-      padding: 1em;
-      width: 300px;
-    }
-
-    .notes__add {
-      background: #009578;
-      border: none;
-      border-radius: 7px;
-      color: #ffffff;
-      cursor: pointer;
-      font-size: 1.25em;
-      font-weight: bold;
-      margin-bottom: 1em;
-      padding: 0.75em 0;
-      width: 100%;
-    }
-
-    .notes__add:hover {
-      background: #00af8c;
-    }
-
-    .notes__list-item {
-      cursor: pointer;
-    }
-
-    .notes__list-item--selected {
-      background: #eeeeee;
-      border-radius: 7px;
-      font-weight: bold;
-    }
-
-    .notes__small-title,
-    .notes__small-updated {
-      padding: 10px;
-    }
-
-    .notes__small-title {
-      font-size: 1.2em;
-    }
-
-    .notes__small-body {
-      padding: 0 10px;
-    }
-
-    .notes__small-updated {
-      color: #aaaaaa;
-      font-style: italic;
-      text-align: right;
-    }
-
-    .notes__preview {
-      display: flex;
-      flex-direction: column;
-      padding: 2em 3em;
-      flex-grow: 1;
-    }
-
-    .notes__title,
-    .notes__body {
-      border: none;
-      outline: none;
-      width: 100%;
-    }
-
-    .notes__title {
-      font-size: 3em;
-      font-weight: bold;
-    }
-
-    .notes__body {
-      flex-grow: 1;
-      font-size: 1.2em;
-      line-height: 1.5;
-      margin-top: 2em;
-      resize: none;
-    }
-  </style>
-  <body></body>
+      var blocks = setInterval(function () {
+        var blockLast = document.getElementById("block" + (counter - 1));
+        var holeLast = document.getElementById("hole" + (counter - 1));
+        if (counter > 0) {
+          var blockLastTop = parseInt(
+            window.getComputedStyle(blockLast).getPropertyValue("top")
+          );
+          var holeLastTop = parseInt(
+            window.getComputedStyle(holeLast).getPropertyValue("top")
+          );
+        }
+        if (blockLastTop < 400 || counter == 0) {
+          var block = document.createElement("div");
+          var hole = document.createElement("div");
+          block.setAttribute("class", "block");
+          hole.setAttribute("class", "hole");
+          block.setAttribute("id", "block" + counter);
+          hole.setAttribute("id", "hole" + counter);
+          block.style.top = blockLastTop + 100 + "px";
+          hole.style.top = holeLastTop + 100 + "px";
+          var random = Math.floor(Math.random() * 360);
+          hole.style.left = random + "px";
+          game.appendChild(block);
+          game.appendChild(hole);
+          currentBlocks.push(counter);
+          counter++;
+        }
+        var characterTop = parseInt(
+          window.getComputedStyle(character).getPropertyValue("top")
+        );
+        var characterLeft = parseInt(
+          window.getComputedStyle(character).getPropertyValue("left")
+        );
+        var drop = 0;
+        if (characterTop <= 0) {
+          alert("Game over. Score: " + (counter - 9));
+          clearInterval(blocks);
+          location.reload();
+        }
+        for (var i = 0; i < currentBlocks.length; i++) {
+          let current = currentBlocks[i];
+          let iblock = document.getElementById("block" + current);
+          let ihole = document.getElementById("hole" + current);
+          let iblockTop = parseFloat(
+            window.getComputedStyle(iblock).getPropertyValue("top")
+          );
+          let iholeLeft = parseFloat(
+            window.getComputedStyle(ihole).getPropertyValue("left")
+          );
+          iblock.style.top = iblockTop - 0.5 + "px";
+          ihole.style.top = iblockTop - 0.5 + "px";
+          if (iblockTop < -20) {
+            currentBlocks.shift();
+            iblock.remove();
+            ihole.remove();
+          }
+          if (iblockTop - 20 < characterTop && iblockTop > characterTop) {
+            drop++;
+            if (iholeLeft <= characterLeft && iholeLeft + 20 >= characterLeft) {
+              drop = 0;
+            }
+          }
+        }
+        if (drop == 0) {
+          if (characterTop < 480) {
+            character.style.top = characterTop + 2 + "px";
+          }
+        } else {
+          character.style.top = characterTop - 0.5 + "px";
+        }
+      }, 1);
+    </script>
+  </body>
 </html>
