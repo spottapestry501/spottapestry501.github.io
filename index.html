@@ -24,8 +24,8 @@
         let yValue = (document.getElementById("x-value").textContent = e.x);
         let xValue = (document.getElementById("y-value").textContent = e.y);
 
-        circle.style.top = xValue + "px";
-        circle.style.left = yValue + "px";
+        circle.style.top = xValue + -50 + "px";
+        circle.style.left = yValue + -50 + "px";
       });
 
       // document.getElementById("randomNumber").innerHTML = index + "px";
@@ -41,11 +41,6 @@
         position: relative;
         left: 100px;
         align-items: center;
-      }
-
-      .randomNumber {
-        position: relative;
-        top: 200px;
       }
     </style>
   </body>
