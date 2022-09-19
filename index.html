@@ -11,8 +11,8 @@
     <p>X: <span id="x-value"></span></p>
     <p>Y: <span id="y-value"></span></p>
     <script defer>
-      //circle.style.left = parseInt(circle.style.left) + yValue + "px"; in case needed use this.
       let circle = document.querySelector(".circle");
+      let moveBy = 10;
 
       window.addEventListener("load", () => {
         circle.style.position = "absolute";
@@ -20,18 +20,21 @@
         circle.style.top = 0;
       });
 
-      window.addEventListener("mousedown", function (e) {
-        let yValue = (document.getElementById("x-value").textContent = e.x);
-        let xValue = (document.getElementById("y-value").textContent = e.y);
-        function moveRandomly() {
-          let moveBy = Math.floor(Math.random * 100);
-          circle.style.left = moveBy + "px";
-          console.log(moveBy);
+      window.addEventListener("keydown", (e) => {
+        switch (e.key) {
+          case "ArrowLeft":
+            circle.style.left = parseInt(circle.style.left) - moveBy + "px";
+            break;
+          case "ArrowRight":
+            circle.style.left = parseInt(circle.style.left) + moveBy + "px";
+            break;
+          case "ArrowUp":
+            circle.style.top = parseInt(circle.style.top) - moveBy + "px";
+            break;
+          case "ArrowDown":
+            circle.style.top = parseInt(circle.style.top) + moveBy + "px";
+            break;
         }
-
-        setInterval(moveRandomly, 1000);
-        circle.style.top = xValue + -50 + "px";
-        circle.style.left = yValue + -50 + "px";
       });
     </script>
     <style defer>
