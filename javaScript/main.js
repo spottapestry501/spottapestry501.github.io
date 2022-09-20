@@ -7,8 +7,8 @@ let deaths = 0;
 
 window.addEventListener("load", () => {
   circle.style.position = "absolute";
-  circle.style.left = 0;
-  circle.style.top = 0;
+  circle.style.left = 100;
+  circle.style.top = 100;
 });
 
 window.addEventListener("keydown", (e) => {
