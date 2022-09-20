@@ -1,5 +1,9 @@
 let circle = document.querySelector(".circle");
 let moveBy = 10;
+let food = 10;
+let water = 20;
+let energy = 100;
+let deaths = 0;
 
 window.addEventListener("load", () => {
   circle.style.position = "absolute";
