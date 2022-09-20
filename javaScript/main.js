@@ -4,6 +4,8 @@ let food = 10;
 let water = 20;
 let energy = 100;
 let deaths = 0;
+let foodCounter = document.getElementById("foodCounter");
+let waterCounter = document.getElementById("waterCounter");
 
 window.addEventListener("load", () => {
   circle.style.position = "absolute";
@@ -27,3 +29,5 @@ window.addEventListener("keydown", (e) => {
       break;
   }
 });
+foodCounter.innerHTML = "Food: " + food
+waterCounter.innerHTML = "Water: " + water
