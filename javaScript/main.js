@@ -1,6 +1,7 @@
 let circle = document.querySelector(".circle");
+let food = document.querySelector(".food");
 let moveBy = 10;
-let food = 10;
+let foood = 10;
 let water = 20;
 let energy = 100;
 let deaths = 0;
@@ -29,5 +30,24 @@ window.addEventListener("keydown", (e) => {
       break;
   }
 });
-foodCounter.innerHTML = "Food: " + food
+foodCounter.innerHTML = "Food: " + foood
 waterCounter.innerHTML = "Water: " + water
+
+let randomNumbers = [100,200,300,400,500,600,700,800,900,1000]
+let shuffleArray = array => {
+  for (let i = array.length - 1; i > 0; i--) {
+    let j = Math.floor(Math.random() * (i + 1));
+    let temp = array[i];
+    array[i] = array[j];
+    array[j] = temp;
+  }
+
+  
+};
+
+function randomizeFoodLocation() {
+moveFood = shuffleArray(randomNumbers);
+food.style.top = + moveFood + "px";
+}
+randomizeFoodLocation();
+
