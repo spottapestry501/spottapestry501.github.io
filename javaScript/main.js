@@ -28,6 +28,19 @@ window.addEventListener("keydown", (e) => {
     case "ArrowDown":
       circle.style.top = parseInt(circle.style.top) + moveBy + "px";
       break;
+      case "A":
+        circle.style.left = parseInt(circle.style.left) - moveBy + "px";
+        break;
+      case "D":
+        circle.style.left = parseInt(circle.style.left) + moveBy + "px";
+        break;
+      case "W":
+        circle.style.top = parseInt(circle.style.top) - moveBy + "px";
+        break;
+      case "S":
+        circle.style.top = parseInt(circle.style.top) + moveBy + "px";
+        break;
+      
   }
 });
 foodCounter.innerHTML = "Food: " + foood
