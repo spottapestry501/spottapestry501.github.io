@@ -1,6 +1,6 @@
 let circle = document.querySelector(".circle");
 let food = document.querySelector(".food");
-let moveBy = 10;
+let moveBy = 120;
 let foood = 10;
 let water = 20;
 let energy = 100;
@@ -28,16 +28,16 @@ window.addEventListener("keydown", (e) => {
     case "ArrowDown":
       circle.style.top = parseInt(circle.style.top) + moveBy + "px";
       break;
-      case "A":
+      case "a":
         circle.style.left = parseInt(circle.style.left) - moveBy + "px";
         break;
-      case "D":
+      case "d":
         circle.style.left = parseInt(circle.style.left) + moveBy + "px";
         break;
-      case "W":
+      case "w":
         circle.style.top = parseInt(circle.style.top) - moveBy + "px";
         break;
-      case "S":
+      case "s":
         circle.style.top = parseInt(circle.style.top) + moveBy + "px";
         break;
       
@@ -46,21 +46,5 @@ window.addEventListener("keydown", (e) => {
 foodCounter.innerHTML = "Food: " + foood
 waterCounter.innerHTML = "Water: " + water
 
-let randomNumbers = [100,200,300,400,500,600,700,800,900,1000]
-let shuffleArray = array => {
-  for (let i = array.length - 1; i > 0; i--) {
-    let j = Math.floor(Math.random() * (i + 1));
-    let temp = array[i];
-    array[i] = array[j];
-    array[j] = temp;
-  }
 
-  
-};
-
-function randomizeFoodLocation() {
-moveFood = shuffleArray(randomNumbers);
-food.style.top = + moveFood + "px";
-}
-randomizeFoodLocation();
 
