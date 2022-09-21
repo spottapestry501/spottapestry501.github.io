@@ -46,6 +46,9 @@ class GenericObject {
         this.setY(this.getY() + moveBy);
         this.update();
     };
+    checkIfFullscreen = function () {
+        alert("You are in fullscreen. There may be issues.")
+    }
 };
 
 /**
@@ -56,7 +59,7 @@ class PlayerObject extends GenericObject {
     y = 0;
     width = 100;
     height = 100;
-    foodAmount = 0;
+    foodAmount = 10;
     colliders = [];
     type = 'player';
 
@@ -116,7 +119,6 @@ class FoodObject extends GenericObject {
 
 // MENU CODE
 
-
 // FUNCTIONS
 function damage(damagetaken) {
     let health = health - damagetaken;
@@ -155,6 +157,10 @@ window.addEventListener("keydown", (e) => {
         case "s":
             player.moveDown();
             break;
+        case "F11":
+            player.checkIfFullscreen();
+            break;
+
     }
 });
 
@@ -179,3 +185,4 @@ function updateUi() {
     foodCounter.innerHTML = "Food: " + player.getFoodAmount();
     waterCounter.innerHTML = "Water: " + water;
 }
+
