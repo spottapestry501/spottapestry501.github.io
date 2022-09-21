@@ -179,4 +179,3 @@ function updateUi() {
     foodCounter.innerHTML = "Food: " + player.getFoodAmount();
     waterCounter.innerHTML = "Water: " + water;
 }
-
