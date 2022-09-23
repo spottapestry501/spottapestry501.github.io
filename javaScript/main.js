@@ -47,7 +47,7 @@ class GenericObject {
         this.update();
     };
     checkIfFullscreen = function () {
-        alert("You are in fullscreen. There may be issues.")
+        alert("You going into fullscreen. There may be issues.")
     }
 };
 
@@ -95,6 +95,7 @@ class PlayerObject extends GenericObject {
     eatFood = function () {
         this.foodAmount++;
     };
+    checkIf
 };
 
 /**
