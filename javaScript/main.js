@@ -95,7 +95,9 @@ class PlayerObject extends GenericObject {
     eatFood = function () {
         this.foodAmount++;
     };
-    checkIf
+    devToolFood = function () {
+        foodAmount++;
+    }
 };
 
 /**
@@ -124,6 +126,8 @@ class FoodObject extends GenericObject {
 function damage(damagetaken) {
     let health = health - damagetaken;
 }
+
+
 
 // MOVEMENT CODE
 
@@ -158,9 +162,11 @@ window.addEventListener("keydown", (e) => {
         case "s":
             player.moveDown();
             break;
-        case "F11":
-            player.checkIfFullscreen();
+        case "t":
+            player.devToolFood();
             break;
+
+        
 
     }
 });
