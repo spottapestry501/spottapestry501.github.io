@@ -1,0 +1,18 @@
+body {
+    background-color: #333;
+}
+
+#background {
+    width: 1000px;
+    height: 900px;
+    background-color: white;
+    position: absolute;
+    margin: 0px;
+    
+}
+
+#game {
+    position: absolute;
+    border: 10px;
+    border-radius: 100%;
+}
