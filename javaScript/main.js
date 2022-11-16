@@ -134,7 +134,6 @@ function damage(damagetaken) {
 window.addEventListener("load", () => {
     player = new PlayerObject();
     food = new FoodObject();
-
     player.update();
     food.update();
 
