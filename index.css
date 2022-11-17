@@ -1,5 +1,5 @@
 body {
-    background-color: #333;
+    background-color: rgb(24, 56, 161);
 }
 
 #background {
@@ -8,15 +8,20 @@ body {
     background-color: white;
     position: absolute;
     margin: 0px;
-    
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 1%;
 }
 
 #game {
     position: absolute;
+    left: 10px;
 
 }
 
 .form{
     position: absolute;
-    left: 70px;
+    left: 80px;
+    size: 150%;
 }
