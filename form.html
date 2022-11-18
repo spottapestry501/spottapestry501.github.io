@@ -8,38 +8,37 @@
     <link rel="icon" type="image/x-icon" href="images/FormsFavicon.png" />
   </head>
   <body>
-    <form action="formResults.html" method="GET">
-      <div>
-        <label for="name">Name</label>
-        <input
-          required
-          type="text"
-          name="name"
-          id="name"
-          placeholder="username"
-        />
-      </div>
-      <div>
-        <label for="email">Email</label>
-        <input type="email" name="email" id="email" required />
-      </div>
-      <div>
-        <label for="age">Age</label>
-        <input type="number" name="age" id="age" min="18" max="120" />
-      </div>
-      <div>
-        <label for="password">Password</label>
-        <input
-          type="password"
-          name="password"
-          id="password"
-          placeholder="password"
-          required
-        />
-      </div>
-      <button type="reset">Reset</button>
-      <button type="submit">Submit</button>
-      <a href="/index.html">Go back</a>
-    </form>
+    <link rel="stylesheet" href="form.css" />
+    <div class="thing">
+      <form action="formResults.html" method="GET">
+        <div>
+          <label for="name">Name</label>
+          <input
+            required
+            type="text"
+            name="name"
+            id="name"
+            placeholder="username"
+          />
+        </div>
+        <div>
+          <label for="email">Email</label>
+          <input type="email" name="email" id="email" required />
+        </div>
+        <div>
+          <label for="password">Password</label>
+          <input
+            type="password"
+            name="password"
+            id="password"
+            placeholder="password"
+            required
+          />
+        </div>
+        <button type="reset">Reset</button>
+        <button type="submit">Submit</button>
+        <a href="/index.html">Go back</a>
+      </form>
+    </div>
   </body>
 </html>
