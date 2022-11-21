@@ -1,6 +1,5 @@
 function bob() {
-    var score = 0;
-    score = score + 1;
-    document.getElementById("score").innerHTML = score;
-
+    for (i = 1; i < 10000; i++) {
+        document.getElementById("score") = score++;
+    }
 }
