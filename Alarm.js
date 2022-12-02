@@ -40,5 +40,18 @@ setInterval(() => {
     s = s < 10 ? "0" + s : s;
     currentTime.innerText = `${h}:${m}:${s} ${ampm}`;
 
-    console.log(`${h}:${m}:${s} ${ampm}`)
+    currentTime.innerText = `${h}:${m}:${s} ${ampm}`;
 }, 1000);
+
+function setAlarm() {
+    let time = `${selectMenu[0].value}:${selectMenu[1].value} ${selectMenu[2].value}`
+
+    if(time.includes("Hour") || time.includes("Minute") || time.includes("AM/PM")){
+        return alert("Please, select a valid time to set Alarm!");
+    }
+    content.classList.add("disable");
+    console.log(time);
+    
+}
+
+setAlarmBtn.addEventListener("click", setAlarm);
