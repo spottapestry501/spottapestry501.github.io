@@ -22,15 +22,26 @@ body {
 
 .form{
     position: absolute;
-    left: 160px;
+    left: 170px;
 }
 
 .clicker{
     position: absolute;
-    left: 235px;
+    left: 255px;
 }
+
 
 .password{
     position: absolute;
-    left: 365px;
+    left: 395px;
+}
+
+.wrapper {
+    position: absolute;
+    right: 10px;
+    margin: 0;
+    padding: 0;
+    height: 990px;
+    width: 100px;
+    background-color: white;
 }
