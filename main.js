@@ -46,9 +46,6 @@ class GenericObject {
         this.setY(this.getY() + moveBy);
         this.update();
     };
-    checkIfFullscreen = function () {
-        alert("You going into fullscreen. There may be issues.")
-    }
 };
 
 /**

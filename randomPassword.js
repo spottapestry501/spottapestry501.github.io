@@ -1,4 +1,5 @@
 function randomize() {
+    let checkbox = document.getElementById("letters");
     myArray = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z","A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z","1","2","3","4","5","6","7","8","9","0","!","@","#","$","%","^","&","*","(",")","-","_","=","+","'",":",";","{","[","}","]",",","<",".",">","/","?","|",",","~"];
     index = Math.floor(Math.random()* 90);
     index2 = Math.floor(Math.random()* 90);
@@ -31,3 +32,7 @@ function randomize2() {
 function Info(){
     alert("Randomize: randomizes with everything. Randomize2: randomizes with letters and numbers.")
 }
+
+
+    
+
