@@ -30,7 +30,10 @@ function randomize2() {
 }
 
 function Info(){
-    alert("Randomize: randomizes with everything. Randomize2: randomizes with letters and numbers.")
+    alert("Randomize: randomizes with everything. Randomize2: randomizes with letters and numbers.");
+}
+function doNotTouch() {
+    alert("Why?");
 }
 
 
