@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="btn" onclick="audio.play()">C</button>
+    <button id="btn2" onclick="audio2.play()">D</button>
+    <button id="btn3" onclick="audio3.play()">E</button>
+    <button id="btn4" onclick="audio4.play()">F</button>
+    <button id="btn5" onclick="audio5.play()">G</button>
+    <button id="btn6" onclick="audio6.play()">A</button>
+    <button id="btn7" onclick="audio7.play()">B</button>
+    <script>
+      let audio = new Audio();
+      let audio2 = new Audio();
+      let audio3 = new Audio();
+      let audio4 = new Audio();
+      let audio5 = new Audio();
+      let audio6 = new Audio();
+      let audio7 = new Audio();
+      audio.src = "/c.mp3";
+      audio2.src = "/d.mp3";
+      audio3.src = "/e.mp3";
+      audio4.src = "/f.mp3";
+      audio5.src = "/g.mp3";
+      audio6.src = "/a.mp3";
+      audio7.src = "/b.mp3";
+    </script>
+    <a href="/index.html">Go back</a>
+  </body>
+</html>
