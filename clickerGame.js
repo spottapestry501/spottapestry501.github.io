@@ -1,5 +1,9 @@
-function bob() {
-    for (i = 1; i < 10000; i++) {
-        document.getElementById("score") = score++;
-    }
-}
+
+const scoreDiv = document.getElementById("score");
+const button = document.getElementById("button");
+
+button.addEventListener("click", e => {
+    const score = 0;
+    score++
+    scoreDiv.innerHTML = "Score: " + score
+})

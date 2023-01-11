@@ -13,3 +13,9 @@ body{
     transform: translate(-50%, -50%);
     border-radius: 1%;
 }
+
+.button {
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+}
