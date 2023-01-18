@@ -6,7 +6,7 @@ button.addEventListener("click", e => {
     score++
     scoreDiv.innerHTML = "Score: " + score;
     if(score == 5) {
-        alert("Congrats! You have 5 score!")
+        
         
     }
 })
