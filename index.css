@@ -62,3 +62,8 @@ body {
     width: 105px;
     background-color: white;
 }
+
+#clicker {
+    position: relative;
+    left: 220px;
+}

@@ -6,12 +6,10 @@ button.addEventListener("click", e => {
     score++
     scoreDiv.innerHTML = "Score: " + score;
     if(score == 5) {
-        score = 0;
-        setInterval(scoreGetter, 1000)
+        alert("Congrats! You have 5 score!")
+        
     }
 })
 
-function scoreGetter() {
-    score + 2;
-}
+
 
