@@ -1,4 +1,4 @@
-var score = 0;
+var score = 99;
 const scoreDiv = document.getElementById("score");
 const button = document.getElementById("button");
 
@@ -12,10 +12,11 @@ button.addEventListener("click", e => {
 })
 
 function updatecount(){
-    setInterval(() => {
-        score++;
-        scoreDiv.innerHTML = "Score: " + score;
-    }, 1000);
+        score--;
+        setInterval(() => {
+            score++;
+            scoreDiv.innerHTML = "Score: " + score;
+        }, 1000);
 }
 
 
