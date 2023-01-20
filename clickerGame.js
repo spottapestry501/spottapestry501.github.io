@@ -11,5 +11,12 @@ button.addEventListener("click", e => {
     }
 })
 
+function updatecount(){
+    setInterval(() => {
+        score++;
+        scoreDiv.innerHTML = "Score: " + score;
+    }, 1000);
+}
+
 
 
