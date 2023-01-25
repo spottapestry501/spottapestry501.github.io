@@ -10,9 +10,16 @@
   <body>
     <div class="thing">
       <h1>Clicker Game</h1>
+      <h3 id="fancyPizza">Fancy pizza: 0</h3>
+      <h3 id="oldManPizza">Old man pizza: 0</h3>
       <h1 id="score">Score: 0</h1>
       <div onclick="scorePlus()" class="button" id="button"></div>
-      <div onclick="updatecount()"" class="upgrade1"></div>
+      <div onclick="updatecount()" class="upgrade1">
+        Old man pizza (100 score for 0.5 score every second, stacks)
+      </div>
+      <div onclick="updatecount2()" class="upgrade2">
+        Fancy pizza (500 score for 2 every second, stacks)
+      </div>
       <a href="/index.html">Go back</a>
     </div>
   </body>

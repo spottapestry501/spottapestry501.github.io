@@ -22,7 +22,13 @@ body{
 }
 
 .upgrade1{
-    width: 100px;
+    width: 200px;
     height: 50px;
     background-color: red;
+}
+
+.upgrade2 {
+    width: 200px;
+    height: 50px;
+    background-color: green;
 }
