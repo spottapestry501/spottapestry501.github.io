@@ -35,7 +35,7 @@ function updatecount2(){
         scoreDiv.innerHTML = "Score: " + score;
         fancyPizza.innerHTML = "Fancy pizza: " + fancyPizzaScore;
         setInterval(() => {
-            score += 2;
+            score += 5;
             scoreDiv.innerHTML = "Score: " + score;
         }, 1000);
     }
