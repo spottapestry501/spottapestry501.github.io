@@ -1,5 +1,5 @@
 body {
-    background-color: rgb(24, 56, 161);
+    background-image: url(space.jpg);
 }
 
 #background {
@@ -67,3 +67,9 @@ body {
     position: relative;
     left: 220px;
 }
+
+#stopMotion {
+    position: relative;
+    left: 225px;
+}
+
