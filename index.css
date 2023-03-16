@@ -73,3 +73,7 @@ body {
     left: 225px;
 }
 
+.wipProjects:hover::after{
+    content: attr(data-tooltip);
+}
+
