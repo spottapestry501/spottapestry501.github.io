@@ -184,8 +184,10 @@ function isCollided(rect1, rect2) {
 function updateUi() {
     let foodCounter = document.getElementById("foodCounter");
     let waterCounter = document.getElementById("waterCounter");
+    let energyCounter = document.getElementById("energyCounter");
 
     foodCounter.innerHTML = "Food: " + player.getFoodAmount();
     waterCounter.innerHTML = "Water: " + water;
+    energyCounter.innerHTML = "Energy: " + energy;
 }
 
